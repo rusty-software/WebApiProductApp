@@ -17,12 +17,12 @@ namespace WebApiProductApp.Controllers
             new Product{ Id = 1, Name = "Sambuca", Category = "Libation", Price = 42.50m },
         };
 
-        IEnumerable<Product> GetAllProducts()
+        public IEnumerable<Product> GetAllProducts()
         {
             return products;
         }
 
-        IHttpActionResult GetProduct(int id)
+        public IHttpActionResult GetProduct(int id)
         {
             var product = products.FirstOrDefault(p => p.Id == id);
             if (product == null)
